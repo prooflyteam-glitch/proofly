@@ -40,7 +40,7 @@ export default function CheckoutPage() {
             createOrder={(data, actions) => {
               return actions.order.create({
                 purchase_units: [{
-                  amount: { value: "29.00" },
+                  amount: { currency_code: "USD", value: "29.00" },
                   description: "Proofly Lifetime Deal"
                 }]
               });
