@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
@@ -38,9 +38,14 @@ export default function CheckoutPage() {
           <PayPalButtons 
             style={{ layout: "vertical", shape: "rect", color: "black" }}
             createOrder={(data, actions) => {
+              // Fix: Added the required 'intent' property and 'currency_code'
               return actions.order.create({
+                intent: "CAPTURE",
                 purchase_units: [{
-                  amount: { currency_code: "USD", value: "29.00" },
+                  amount: { 
+                    currency_code: "USD",
+                    value: "29.00" 
+                  },
                   description: "Proofly Lifetime Deal"
                 }]
               });
