@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function SubmitReviewPage() {
+function SubmitReviewContent() {
   const [file, setFile] = useState<File | null>(null);
   const [rating, setRating] = useState<number>(5);
   const [hoverRating, setHoverRating] = useState<number>(0);
@@ -124,5 +124,18 @@ export default function SubmitReviewPage() {
         </form>
       </div>
     </main>
+  );
+}
+
+// Wrap the main content in a Suspense boundary to allow Next.js to successfully build
+export default function SubmitReviewPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#FAFAFA] flex items-center justify-center p-6 text-black/60">
+        Loading...
+      </div>
+    }>
+      <SubmitReviewContent />
+    </Suspense>
   );
 }
