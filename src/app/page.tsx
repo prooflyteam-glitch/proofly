@@ -6,7 +6,7 @@ export default function Home() {
       {/* Premium Pure White Container */}
       <div className="w-full max-w-md bg-white border border-black/5 rounded-[2rem] p-10 shadow-sm text-center">
         <span className="text-xs font-medium tracking-widest uppercase text-black/40">
-          Proofly - A Linden Prime Project
+          Proofly - A PrimeLabs Project
         </span>
         
         <h1 className="text-4xl font-bold tracking-tight text-[#1D1D1F] mt-3 mb-4">
