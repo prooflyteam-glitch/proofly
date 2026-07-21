@@ -35,7 +35,7 @@
   }
 
   // ⚠️ IMPORTANT: Replace this with your actual Vercel production URL before deploying
-  const BACKEND_URL = 'https://your-actual-vercel-domain.vercel.app'; 
+  const BACKEND_URL = 'https://prooflyofficial.vercel.app/login'; 
 
   // 2. Fetch approved video reviews for this specific product
   fetch(`${BACKEND_URL}/api/reviews/get-approved?productId=${productId}`)
