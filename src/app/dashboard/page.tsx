@@ -159,7 +159,7 @@ export default function DashboardPage() {
             </p>
             <div className="relative bg-black/5 p-4 rounded-2xl border border-black/5">
               <code className="block text-xs font-mono break-all select-all text-black/80">
-                {`<script src="https://proofly.vercel.app/proofly.js" defer></script>`}
+                {`<script src="https://prooflyofficial.vercel.app/proofly.js" defer></script>`}
               </code>
             </div>
           </div>
